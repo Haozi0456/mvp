@@ -1,6 +1,6 @@
-# mvp
+# mvp  [![](https://jitpack.io/v/Haozi0456/mvp.svg)](https://jitpack.io/#Haozi0456/mvp)
 mvp架构
-[![](https://jitpack.io/v/Haozi0456/mvp.svg)](https://jitpack.io/#Haozi0456/mvp)
+
 
 使用方法:
 
