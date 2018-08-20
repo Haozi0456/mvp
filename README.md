@@ -1,2 +1,16 @@
 # mvp
 mvp架构
+##
+[![](https://jitpack.io/v/Haozi0456/mvp.svg)](https://jitpack.io/#Haozi0456/mvp)
+
+使用方法:
+    allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+    dependencies {
+        implementation 'com.github.Haozi0456:mvp:0.1'
+    }
