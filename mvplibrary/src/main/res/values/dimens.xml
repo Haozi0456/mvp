@@ -1,0 +1,50 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="gudieview_width">6dp</dimen>
+    <dimen name="gudieview_heigh">6dp</dimen>
+
+    <dimen name="margin_1_dp">1dp</dimen>
+    <dimen name="margin_2_dp">2dp</dimen>
+    <dimen name="margin_3_dp">3dp</dimen>
+    <dimen name="margin_4_dp">4dp</dimen>
+    <dimen name="margin_5_dp">5dp</dimen>
+    <dimen name="margin_6_dp">6dp</dimen>
+    <dimen name="margin_8_dp">8dp</dimen>
+    <dimen name="margin_10_dp">10dp</dimen>
+    <dimen name="margin_12_dp">12dp</dimen>
+    <dimen name="margin_15_dp">15dp</dimen>
+    <dimen name="margin_16_dp">16dp</dimen>
+    <dimen name="margin_20_dp">20dp</dimen>
+    <dimen name="margin_30_dp">30dp</dimen>
+
+    <dimen name="textSize_large">20sp</dimen>
+    <dimen name="textSize_middle">18sp</dimen>
+    <dimen name="textSize_small">16sp</dimen>
+    <dimen name="textSize_smaller">14sp</dimen>
+    <dimen name="textSize_x_small">12sp</dimen>
+    <dimen name="textSize_xx_small">12sp</dimen>
+
+    <dimen name="Size_20">20dp</dimen>
+    <dimen name="Size_25">25dp</dimen>
+    <dimen name="Size_30">30dp</dimen>
+    <dimen name="Size_35">35dp</dimen>
+    <dimen name="Size_40">40dp</dimen>
+    <dimen name="Size_45">45dp</dimen>
+    <dimen name="Size_48">48dp</dimen>
+    <dimen name="Size_50">50dp</dimen>
+    <dimen name="Size_56">56dp</dimen>
+    <dimen name="Size_60">60dp</dimen>
+    <dimen name="Size_80">80dp</dimen>
+    <dimen name="Size_85">85dp</dimen>
+    <dimen name="Size_90">90dp</dimen>
+    <dimen name="Size_100">100dp</dimen>
+    <dimen name="Size_120">120dp</dimen>
+    <dimen name="Size_140">140dp</dimen>
+    <dimen name="Size_160">160dp</dimen>
+    <dimen name="Size_200">200dp</dimen>
+    <dimen name="Size_240">240dp</dimen>
+    <dimen name="Size_280">280dp</dimen>
+
+    <!--设置Toolbar的高度,默认56dp,坑爹的设置-->
+    <dimen name="abc_action_bar_default_height_material">48dp</dimen>
+</resources>

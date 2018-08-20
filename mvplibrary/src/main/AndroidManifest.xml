@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.zwh.mvp.library">
+
+    <application>
+
+        <!-- Glide配置 -->
+        <meta-data
+            android:name="com.zwh.mvp.library.tools.glideModule.MyGlideModule"
+            android:value="GlideModule"/>
+
+        <!-- Glide集成Okhttp -->
+        <meta-data
+            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+            android:value="GlideModule"/>
+
+
+    </application>
+
+</manifest>
