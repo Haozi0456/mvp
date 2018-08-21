@@ -1,6 +1,7 @@
 package com.zwh.mvp.library.base.activity;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -15,6 +16,7 @@ import butterknife.Unbinder;
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IView {
 
     protected P presenter;
+    protected Context context;
     private Unbinder unbinder;
 
     @Override
@@ -23,7 +25,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         setContentView(getLayoutView());
 
         unbinder = ButterKnife.bind(this);
-
+        context = this;
         presenter = createPresenter();
 
         if (presenter != null) {
