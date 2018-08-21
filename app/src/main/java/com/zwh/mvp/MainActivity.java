@@ -1,6 +1,7 @@
 package com.zwh.mvp;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.zwh.mvp.library.base.activity.BaseActivity;
@@ -16,6 +17,8 @@ public class MainActivity extends BaseActivity<DataPresenter> implements DataVie
     DataPresenter dataPresenter;
     @BindView(R.id.texTV)
     TextView texTV;
+    @BindView(R.id.loginBtn)
+    Button loginBtn;
 
     @Override
     protected int getLayoutView() {
@@ -34,12 +37,13 @@ public class MainActivity extends BaseActivity<DataPresenter> implements DataVie
 
     @Override
     public void getDataFail(String failMsg) {
-
+        texTV.setText(failMsg);
     }
 
-    @OnClick(R.id.texTV)
+
+
+    @OnClick(R.id.loginBtn)
     public void onClick() {
         presenter.getData("ll");
     }
-
 }

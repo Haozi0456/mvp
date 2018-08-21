@@ -1,5 +1,6 @@
 package com.zwh.mvp.model;
 
+import com.zwh.mvp.api.URLConfig;
 import com.zwh.mvp.library.base.model.IModel;
 import com.zwh.mvp.library.base.request.OkHelper;
 import com.zwh.mvp.library.base.response.callback.JsonCallback;
@@ -17,7 +18,8 @@ public class DataModel implements IModel {
 
     public void getData(String key, JsonCallback callback){
         Map<String, String> map = new HashMap<>();
-        map.put("userName",key);
-        OkHelper.getRequest("",map,callback);
+        map.put("account","admin");
+        map.put("password","123456");
+        OkHelper.postRequest(URLConfig.login,map,callback);
     }
 }
