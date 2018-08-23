@@ -1,4 +1,4 @@
-package com.zwh.mvp.library.base.entity;
+package com.zwh.mvp.library.base.model.bean;
 
 import com.zwh.mvp.library.utils.JsonConvertUtils;
 

@@ -1,7 +1,7 @@
 package com.zwh.mvp.presenter;
 
 import com.lzy.okgo.model.Response;
-import com.zwh.mvp.bean.Data;
+import com.zwh.mvp.model.bean.Data;
 import com.zwh.mvp.library.base.presenter.BasePresenter;
 import com.zwh.mvp.library.base.response.BaseResponse;
 import com.zwh.mvp.library.base.response.callback.JsonCallback;

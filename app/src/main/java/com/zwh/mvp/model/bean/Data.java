@@ -1,6 +1,6 @@
-package com.zwh.mvp.bean;
+package com.zwh.mvp.model.bean;
 
-import com.zwh.mvp.library.base.entity.BaseEntity;
+import com.zwh.mvp.library.base.model.bean.BaseEntity;
 
 /**
  * @author Zhaohao
