@@ -1,6 +1,6 @@
 package com.zwh.mvp.model.bean;
 
-import com.zwh.mvp.library.base.model.bean.BaseEntity;
+import com.zwh.mvp.library.base.model.bean.BaseBean;
 
 /**
  * @author Zhaohao
@@ -8,7 +8,7 @@ import com.zwh.mvp.library.base.model.bean.BaseEntity;
  * @Date 2018/08/20 16:15
  */
 
-public class Data extends BaseEntity{
+public class UserBean extends BaseBean {
 
 
     /**

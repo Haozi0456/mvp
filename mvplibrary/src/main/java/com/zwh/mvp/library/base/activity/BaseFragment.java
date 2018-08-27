@@ -5,9 +5,12 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.StringUtils;
@@ -24,22 +27,23 @@ import butterknife.Unbinder;
  *
  * @author Zhaohao
  * @Date 2018/08/27 10:39
- * @Description: BaseActivity 基类Activity
+ * @Description: BaseFragment 基类Fragment
  */
-public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IView {
+public abstract class BaseFragment<P extends IPresenter> extends Fragment implements IView {
 
     protected P presenter;
     protected Context context;
     private Unbinder unbinder;
+    private View mView;
     private ProgressDialog progressDialog;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutView());
-
-        unbinder = ButterKnife.bind(this);
-        context = this;
+        mView = inflater.inflate(getLayoutView(), container, false);
+        this.context = getActivity();
+        unbinder = ButterKnife.bind(this, mView);
         presenter = createPresenter();
 
         if (presenter != null) {
@@ -47,18 +51,17 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         }else{
             throw new IllegalStateException("Please call mPresenter in BaseMVPActivity(createPresenter) to create!");
         }
-        BaseAPP.getInstance().addActivity(this);
         viewCreated();
+        return mView;
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         if (presenter != null){
             presenter.detachView();
         }
         unbinder.unbind();
-        BaseAPP.getInstance().removeActivity(this);
     }
 
 

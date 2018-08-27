@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.blankj.utilcode.util.Utils;
+import com.hjq.bar.ITitleBarStyle;
+import com.hjq.bar.TitleBar;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -12,6 +14,7 @@ import com.lzy.okgo.cookie.store.SPCookieStore;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
+import com.zwh.mvp.library.R;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -43,7 +46,79 @@ public class BaseAPP extends Application {
         //初始化工具类
         Utils.init(this);
 
+        initTitleBar();
+
         initOkHttpConfig();
+    }
+
+    private void initTitleBar() {
+        TitleBar.initStyle(new ITitleBarStyle() {
+            @Override
+            public int getTitleBarHeight() {
+                return 0;
+            }
+
+            @Override
+            public int getBackgroundColor() {
+                return 0;
+            }
+
+            @Override
+            public int getBackIconResource() {
+                return R.mipmap.bar_icon_back_white;
+            }
+
+            @Override
+            public int getLeftViewColor() {
+                return 0xFFFFFFFF;
+            }
+
+            @Override
+            public int getTitleViewColor() {
+                return 0xFFFFFFFF;
+            }
+
+            @Override
+            public int getRightViewColor() {
+                return 0xFFFFFFFF;
+            }
+
+            @Override
+            public float getLeftViewSize() {
+                return 16;
+            }
+
+            @Override
+            public float getTitleViewSize() {
+                return 18;
+            }
+
+            @Override
+            public float getRightViewSize() {
+                return 16;
+            }
+
+            @Override
+            public int getLeftViewBackground() {
+                return 0;
+            }
+
+            @Override
+            public int getRightViewBackground() {
+                return 0;
+            }
+
+            @Override
+            public boolean getLineVisibility() {
+                return true;
+            }
+
+            @Override
+            public int getLineBackgroundColor() {
+                return 0xFFECECEC;
+            }
+        });
+
     }
 
     /**

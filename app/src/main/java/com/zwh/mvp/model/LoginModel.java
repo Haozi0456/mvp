@@ -14,9 +14,9 @@ import java.util.Map;
  * @Date 2018/08/20 16:11
  */
 
-public class DataModel implements IModel {
+public class LoginModel implements IModel {
 
-    public void getData(String key, JsonCallback callback){
+    public void login(String key, JsonCallback callback){
         Map<String, String> map = new HashMap<>();
         map.put("account","admin");
         map.put("password","123456");

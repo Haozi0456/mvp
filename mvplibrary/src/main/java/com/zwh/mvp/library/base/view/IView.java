@@ -11,7 +11,7 @@ public interface IView {
 
     void showToast(String msg);
 
-    void showLoading();
+    void showLoading(boolean isCancelable,String tip);
 
     void hideLoading();
 }

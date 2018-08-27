@@ -5,11 +5,10 @@ import com.zwh.mvp.library.base.view.IView;
 /**
  * @author Zhaohao
  * @Description:
- * @Date 2018/08/20 11:42
+ * @Date 2018/08/27 15:16
  */
 
-public interface DataView extends IView {
+public interface HomeView extends IView {
 
-    void getDataFail(String failMsg);
-
+    void result(String reslut);
 }

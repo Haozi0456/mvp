@@ -8,7 +8,7 @@ import com.zwh.mvp.library.utils.JsonConvertUtils;
  * @Date 2018/08/21 15:27
  */
 
-public class BaseEntity {
+public class BaseBean {
 
 
     public String toString(){
