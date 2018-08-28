@@ -3,6 +3,7 @@ package com.zwh.mvp.library.app;
 import android.app.Activity;
 import android.app.Application;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.hjq.bar.ITitleBarStyle;
 import com.hjq.bar.TitleBar;
@@ -45,6 +46,8 @@ public class BaseAPP extends Application {
 
         //初始化工具类
         Utils.init(this);
+        //设置toast背景颜色
+        ToastUtils.setBgColor(getResources().getColor(R.color.toast_stroke_gray));
 
         initTitleBar();
 

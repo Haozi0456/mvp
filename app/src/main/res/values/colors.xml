@@ -2,6 +2,15 @@
 <resources>
     <color name="colorPrimary">@color/main_colorPrimary</color>
     <color name="colorPrimaryDark">@color/main_colorPrimary</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">@color/main_colorAccent</color>
+
+    <!--app主题色_标题栏颜色-->
+    <color name="main_colorPrimary">#2A8CFF</color>
+    <!--app主题色_状态栏颜色-->
+    <color name="main_colorPrimaryDark">#4baff0</color>
+    <!--app主题色_光标颜色-->
+    <color name="main_colorAccent">#2A8CFF</color>
+    <!--app 页面背景色-->
+    <color name="main_colorBackground">#EFF1F7</color>
 
 </resources>

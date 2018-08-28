@@ -26,8 +26,7 @@ import butterknife.OnClick;
 
 public class LoginActivity extends BaseTitleActivity<LoginPresenter> implements LoginView {
 
-    @BindView(R.id.texTV)
-    TextView texTV;
+
     @BindView(R.id.loginBtn)
     Button loginBtn;
 
@@ -38,6 +37,7 @@ public class LoginActivity extends BaseTitleActivity<LoginPresenter> implements 
 
     @Override
     protected void viewCreated() {
+        isTitleBarHidden(true);
         setTitle("登录测试");
 //        setLeftTitle("返回");
         isBackIconHidden(true);
@@ -68,8 +68,9 @@ public class LoginActivity extends BaseTitleActivity<LoginPresenter> implements 
 
     @Override
     public void loginReslut(UserBean userBean) {
-        texTV.setText(userBean.getAccount());
-        startActivity(new Intent(context, AppActivity.class));
+        Intent intent = new Intent(context, AppActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //退出防止重启
+        startActivity(intent);
     }
 
 
