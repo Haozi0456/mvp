@@ -119,7 +119,7 @@ public class AppActivity extends AppCompatActivity implements BottomNavigationBa
 
     @Override
     public void onTabSelected(int position) {
-
+        viewPager.setCurrentItem(position);
     }
 
     @Override
