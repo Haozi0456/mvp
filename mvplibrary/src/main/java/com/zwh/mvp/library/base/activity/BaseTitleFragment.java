@@ -19,8 +19,8 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
 import com.zwh.mvp.library.R;
-import com.zwh.mvp.library.base.presenter.IPresenter;
-import com.zwh.mvp.library.base.view.IView;
+import com.zwh.mvp.library.base.presenter.IBasePresenter;
+import com.zwh.mvp.library.base.view.IBaseView;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
 
 import butterknife.ButterKnife;
@@ -32,7 +32,7 @@ import butterknife.Unbinder;
  * @Date 2018/08/27 10:39
  * @Description: BaseFragment 带标题的基类Fragment
  */
-public abstract class BaseTitleFragment<P extends IPresenter> extends Fragment implements IView {
+public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragment implements IBaseView {
 
     protected P presenter;
     protected Context context;

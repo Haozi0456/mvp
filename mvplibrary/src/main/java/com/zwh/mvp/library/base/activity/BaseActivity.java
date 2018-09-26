@@ -14,8 +14,8 @@ import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.zwh.mvp.library.R;
 import com.zwh.mvp.library.app.BaseAPP;
-import com.zwh.mvp.library.base.presenter.IPresenter;
-import com.zwh.mvp.library.base.view.IView;
+import com.zwh.mvp.library.base.presenter.IBasePresenter;
+import com.zwh.mvp.library.base.view.IBaseView;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -26,7 +26,7 @@ import butterknife.Unbinder;
  * @Date 2018/08/27 10:39
  * @Description: BaseActivity 基类Activity
  */
-public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IView {
+public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatActivity implements IBaseView {
 
     protected P presenter;
     protected Context context;

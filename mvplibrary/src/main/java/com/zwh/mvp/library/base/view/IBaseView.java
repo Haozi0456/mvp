@@ -7,7 +7,7 @@ package com.zwh.mvp.library.base.view;
  * @Date 2018/08/20 11:13
  */
 
-public interface IView {
+public interface IBaseView {
 
     void showToast(String msg);
 

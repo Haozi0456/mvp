@@ -7,7 +7,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +15,8 @@ import android.widget.TextView;
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.zwh.mvp.library.R;
-import com.zwh.mvp.library.app.BaseAPP;
-import com.zwh.mvp.library.base.presenter.IPresenter;
-import com.zwh.mvp.library.base.view.IView;
+import com.zwh.mvp.library.base.presenter.IBasePresenter;
+import com.zwh.mvp.library.base.view.IBaseView;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -29,7 +27,7 @@ import butterknife.Unbinder;
  * @Date 2018/08/27 10:39
  * @Description: BaseFragment 基类Fragment
  */
-public abstract class BaseFragment<P extends IPresenter> extends Fragment implements IView {
+public abstract class BaseFragment<P extends IBasePresenter> extends Fragment implements IBaseView {
 
     protected P presenter;
     protected Context context;

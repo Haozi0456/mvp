@@ -1,6 +1,6 @@
 package com.zwh.mvp.library.base.presenter;
 
-import com.zwh.mvp.library.base.view.IView;
+import com.zwh.mvp.library.base.view.IBaseView;
 
 
 /**
@@ -9,7 +9,7 @@ import com.zwh.mvp.library.base.view.IView;
  * @Date 2018/08/20 1:59
  */
 
-public class BasePresenter<V extends IView> implements IPresenter<V> {
+public class BasePresenter<V extends IBaseView> implements IBasePresenter<V> {
 
     protected V view;
 

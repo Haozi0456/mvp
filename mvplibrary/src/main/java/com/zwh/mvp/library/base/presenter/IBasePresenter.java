@@ -1,6 +1,6 @@
 package com.zwh.mvp.library.base.presenter;
 
-import com.zwh.mvp.library.base.view.IView;
+import com.zwh.mvp.library.base.view.IBaseView;
 
 /**
  * @author Zhaohao
@@ -8,7 +8,7 @@ import com.zwh.mvp.library.base.view.IView;
  * @Date 2018/08/20 11:15
  */
 
-public interface IPresenter<V extends IView> {
+public interface IBasePresenter<V extends IBaseView> {
 
     /**
      * 绑定视图

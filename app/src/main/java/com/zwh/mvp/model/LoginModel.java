@@ -1,7 +1,7 @@
 package com.zwh.mvp.model;
 
 import com.zwh.mvp.api.URLConfig;
-import com.zwh.mvp.library.base.model.IModel;
+import com.zwh.mvp.library.base.model.IBaseModel;
 import com.zwh.mvp.library.base.request.OkHelper;
 import com.zwh.mvp.library.base.response.callback.JsonCallback;
 
@@ -14,7 +14,7 @@ import java.util.Map;
  * @Date 2018/08/20 16:11
  */
 
-public class LoginModel implements IModel {
+public class LoginModel implements IBaseModel {
 
     public void login(String key, JsonCallback callback){
         Map<String, String> map = new HashMap<>();

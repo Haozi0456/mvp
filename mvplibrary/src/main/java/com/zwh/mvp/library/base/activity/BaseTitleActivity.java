@@ -21,8 +21,8 @@ import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
 import com.zwh.mvp.library.R;
 import com.zwh.mvp.library.app.BaseAPP;
-import com.zwh.mvp.library.base.presenter.IPresenter;
-import com.zwh.mvp.library.base.view.IView;
+import com.zwh.mvp.library.base.presenter.IBasePresenter;
+import com.zwh.mvp.library.base.view.IBaseView;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
 
 import butterknife.ButterKnife;
@@ -34,7 +34,7 @@ import butterknife.Unbinder;
  * @Date 2018/08/27 10:40
  * @Description: BaseTitleActivity 带标题栏的基类activity
  */
-public abstract class BaseTitleActivity<P extends IPresenter> extends AppCompatActivity implements IView {
+public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCompatActivity implements IBaseView {
 
     protected P presenter;
     protected Context context;

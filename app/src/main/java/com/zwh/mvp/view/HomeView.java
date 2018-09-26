@@ -1,6 +1,6 @@
 package com.zwh.mvp.view;
 
-import com.zwh.mvp.library.base.view.IView;
+import com.zwh.mvp.library.base.view.IBaseView;
 
 /**
  * @author Zhaohao
@@ -8,7 +8,7 @@ import com.zwh.mvp.library.base.view.IView;
  * @Date 2018/08/27 15:16
  */
 
-public interface HomeView extends IView {
+public interface HomeView extends IBaseView {
 
     void result(String reslut);
 }
