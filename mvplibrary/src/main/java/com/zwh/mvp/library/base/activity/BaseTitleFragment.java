@@ -111,6 +111,27 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
         titleBar.setRightIcon(drawable);
     }
 
+    public void setTitleBarBackground(int color){
+        titleBar.setBackgroundColor(color);
+    }
+
+    
+    public void setTitleTextColor(int color){
+        titleBar.getTitleView().setTextColor(color);
+    }
+
+    public void setSizeTitle(float size){
+        titleBar.getTitleView().setTextSize(size);
+    }
+
+    public void setSizeLeft(float size){
+        titleBar.getLeftView().setTextSize(size);
+    }
+
+    public void setSizeRight(float size){
+        titleBar.getRightView().setTextSize(size);
+    }
+
     public void setTitleBarClickListener(final onTitleBarClikListener listener){
         if(listener != null){
             titleBar.setOnTitleBarListener(new OnTitleBarListener() {
