@@ -12,5 +12,5 @@ mvp架构
 	}
 
     dependencies {
-        implementation 'com.github.Haozi0456:mvp:0.5'
+        implementation 'com.github.Haozi0456:mvp:0.6'
     }
