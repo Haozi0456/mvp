@@ -148,7 +148,7 @@ public class ImageLoaderUtils {
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
-                .transform(new GlideRoundTransformUtil(context))
+                .circleCrop()
                 .error(R.drawable.toux2);
         Glide.with(context).load(url).apply(options).into(imageView);
     }
@@ -168,7 +168,7 @@ public class ImageLoaderUtils {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .placeholder(placeholder)
-                .transform(new GlideRoundTransformUtil(context))
+                .circleCrop()
                 .error(error);
         Glide.with(context).load(url).apply(options).into(imageView);
 
