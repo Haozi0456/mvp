@@ -39,7 +39,7 @@ dependencies {
 
 
     //标题栏
-    implementation 'com.hjq:titlebar:2.5'
+    implementation 'com.hjq:titlebar:3.0'
     //json解析
     compile 'com.google.code.gson:gson:2.8.2'
 
@@ -51,4 +51,7 @@ dependencies {
 
     //帮助工具类
     compile 'com.blankj:utilcode:1.20.2'
+
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
 }

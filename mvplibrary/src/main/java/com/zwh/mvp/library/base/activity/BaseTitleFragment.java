@@ -21,7 +21,12 @@ import com.hjq.bar.TitleBar;
 import com.zwh.mvp.library.R;
 import com.zwh.mvp.library.base.presenter.IBasePresenter;
 import com.zwh.mvp.library.base.view.IBaseView;
+import com.zwh.mvp.library.event.Event;
+import com.zwh.mvp.library.event.EventBusUtil;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -63,6 +68,12 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
         }else{
             throw new IllegalStateException("Please call mPresenter in BaseMVPActivity(createPresenter) to create!");
         }
+
+
+        if (isRegisterEventBus()) {
+            EventBusUtil.register(this);
+        }
+
         viewCreated();
         return mView;
     }
@@ -161,6 +172,11 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
             presenter.detachView();
         }
         unbinder.unbind();
+
+
+        if (isRegisterEventBus()) {
+            EventBusUtil.unregister(this);
+        }
     }
 
 
@@ -200,5 +216,46 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
     @Override
     public void showToast(String msg) {
         ToastUtils.showShort(msg);
+    }
+
+    /**
+     * 是否注册事件分发
+     *
+     * @return true绑定EventBus事件分发，默认不绑定，子类需要绑定的话复写此方法返回true.
+     */
+    protected boolean isRegisterEventBus() {
+        return false;
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventBusCome(Event event) {
+        if (event != null) {
+            receiveEvent(event);
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void onStickyEventBusCome(Event event) {
+        if (event != null) {
+            receiveStickyEvent(event);
+        }
+    }
+
+    /**
+     * 接收到分发到事件
+     *
+     * @param event 事件
+     */
+    protected void receiveEvent(Event event) {
+
+    }
+
+    /**
+     * 接受到分发的粘性事件
+     *
+     * @param event 粘性事件
+     */
+    protected void receiveStickyEvent(Event event) {
+
     }
 }
