@@ -143,6 +143,14 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
         titleBar.getRightView().setTextSize(size);
     }
 
+    public void setLeftTilteColor(int color){
+        titleBar.getLeftView().setTextColor(color);
+    }
+
+    public void setRightTitleColor(int color){
+        titleBar.getRightView().setTextColor(color);
+    }
+
     public void setTitleBarClickListener(final onTitleBarClikListener listener){
         if(listener != null){
             titleBar.setOnTitleBarListener(new OnTitleBarListener() {
