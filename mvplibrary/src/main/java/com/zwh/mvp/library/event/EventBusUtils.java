@@ -4,7 +4,7 @@ import org.greenrobot.eventbus.EventBus;
 
 /**
  * @author Zhaohao
- * @Description:
+ * @Description: eventBus工具类
  * @date 2018-10-10 21:40
  */
 public class EventBusUtils {
