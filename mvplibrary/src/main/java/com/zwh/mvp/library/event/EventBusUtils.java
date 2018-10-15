@@ -7,7 +7,7 @@ import org.greenrobot.eventbus.EventBus;
  * @Description:
  * @date 2018-10-10 21:40
  */
-public class EventBusUtil {
+public class EventBusUtils {
 
     /**
      * 注册事件

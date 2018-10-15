@@ -18,7 +18,7 @@ import com.zwh.mvp.library.R;
 import com.zwh.mvp.library.base.presenter.IBasePresenter;
 import com.zwh.mvp.library.base.view.IBaseView;
 import com.zwh.mvp.library.event.Event;
-import com.zwh.mvp.library.event.EventBusUtil;
+import com.zwh.mvp.library.event.EventBusUtils;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -56,7 +56,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         }
 
         if (isRegisterEventBus()) {
-            EventBusUtil.register(this);
+            EventBusUtils.register(this);
         }
 
         viewCreated();
@@ -72,7 +72,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         unbinder.unbind();
 
         if (isRegisterEventBus()) {
-            EventBusUtil.unregister(this);
+            EventBusUtils.unregister(this);
         }
     }
 

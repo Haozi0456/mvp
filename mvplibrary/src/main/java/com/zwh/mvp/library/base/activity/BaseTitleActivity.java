@@ -24,7 +24,7 @@ import com.zwh.mvp.library.app.BaseAPP;
 import com.zwh.mvp.library.base.presenter.IBasePresenter;
 import com.zwh.mvp.library.base.view.IBaseView;
 import com.zwh.mvp.library.event.Event;
-import com.zwh.mvp.library.event.EventBusUtil;
+import com.zwh.mvp.library.event.EventBusUtils;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -63,7 +63,7 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
         }
 
         if (isRegisterEventBus()) {
-            EventBusUtil.register(this);
+            EventBusUtils.register(this);
         }
 
         BaseAPP.getInstance().addActivity(this);
@@ -191,7 +191,7 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
         unbinder.unbind();
 
         if (isRegisterEventBus()) {
-            EventBusUtil.unregister(this);
+            EventBusUtils.unregister(this);
         }
 
         BaseAPP.getInstance().removeActivity(this);

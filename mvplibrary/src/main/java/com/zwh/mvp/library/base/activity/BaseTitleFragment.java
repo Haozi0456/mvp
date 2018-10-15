@@ -22,7 +22,7 @@ import com.zwh.mvp.library.R;
 import com.zwh.mvp.library.base.presenter.IBasePresenter;
 import com.zwh.mvp.library.base.view.IBaseView;
 import com.zwh.mvp.library.event.Event;
-import com.zwh.mvp.library.event.EventBusUtil;
+import com.zwh.mvp.library.event.EventBusUtils;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -71,7 +71,7 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
 
 
         if (isRegisterEventBus()) {
-            EventBusUtil.register(this);
+            EventBusUtils.register(this);
         }
 
         viewCreated();
@@ -183,7 +183,7 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
 
 
         if (isRegisterEventBus()) {
-            EventBusUtil.unregister(this);
+            EventBusUtils.unregister(this);
         }
     }
 
