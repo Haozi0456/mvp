@@ -71,7 +71,9 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
 
 
         if (isRegisterEventBus()) {
-            EventBusUtils.register(this);
+            if(!EventBusUtils.isRegistered(this)){//加上判断
+                EventBusUtils.register(this);
+            }
         }
 
         viewCreated();
@@ -183,7 +185,9 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
 
 
         if (isRegisterEventBus()) {
-            EventBusUtils.unregister(this);
+            if(EventBusUtils.isRegistered(this)){
+                EventBusUtils.unregister(this);
+            }
         }
     }
 

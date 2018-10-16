@@ -26,6 +26,15 @@ public class EventBusUtils {
     }
 
     /**
+     * 判断是否已经注册
+     * @param subscriber
+     * @return
+     */
+    public static boolean isRegistered(Object subscriber){
+        return EventBus.getDefault().isRegistered(subscriber);
+    }
+
+    /**
      * 发送普通事件
      * @param event
      */

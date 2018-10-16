@@ -27,6 +27,7 @@ import com.zwh.mvp.library.event.Event;
 import com.zwh.mvp.library.event.EventBusUtils;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -63,7 +64,9 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
         }
 
         if (isRegisterEventBus()) {
-            EventBusUtils.register(this);
+            if(!EventBusUtils.isRegistered(this)){//加上判断
+                EventBusUtils.register(this);
+            }
         }
 
         BaseAPP.getInstance().addActivity(this);
@@ -191,7 +194,9 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
         unbinder.unbind();
 
         if (isRegisterEventBus()) {
-            EventBusUtils.unregister(this);
+            if(EventBusUtils.isRegistered(this)){
+                EventBusUtils.unregister(this);
+            }
         }
 
         BaseAPP.getInstance().removeActivity(this);
