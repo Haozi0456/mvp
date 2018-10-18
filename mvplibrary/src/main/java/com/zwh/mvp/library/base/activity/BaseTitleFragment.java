@@ -75,8 +75,8 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
                 EventBusUtils.register(this);
             }
         }
+        viewCreated(savedInstanceState);
 
-        viewCreated();
         return mView;
     }
 
@@ -194,7 +194,7 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
 
     protected abstract int getLayoutView();
 
-    protected abstract void viewCreated();
+    protected abstract void viewCreated(Bundle savedInstanceState);
 
     protected abstract P  createPresenter();
 

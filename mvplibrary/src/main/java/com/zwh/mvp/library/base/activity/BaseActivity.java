@@ -62,7 +62,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
         BaseAPP.getInstance().addActivity(this);
 
-        viewCreated();
+        viewCreated(savedInstanceState);
     }
 
     @Override
@@ -85,7 +85,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
     protected abstract int getLayoutView();
 
-    protected abstract void viewCreated();
+    protected abstract void viewCreated(Bundle savedInstanceState);
 
     protected abstract P  createPresenter();
 

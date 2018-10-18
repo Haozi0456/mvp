@@ -71,7 +71,7 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
 
         BaseAPP.getInstance().addActivity(this);
 
-        viewCreated();
+        viewCreated(savedInstanceState);
     }
 
     @SuppressLint("InflateParams")
@@ -205,7 +205,7 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
 
     protected abstract int getLayoutView();
 
-    protected abstract void viewCreated();
+    protected abstract void viewCreated(Bundle savedInstanceState);
 
     protected abstract P  createPresenter();
 

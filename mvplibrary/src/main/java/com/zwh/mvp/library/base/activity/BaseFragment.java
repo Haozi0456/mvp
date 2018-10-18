@@ -62,7 +62,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
             }
         }
 
-        viewCreated();
+        viewCreated(savedInstanceState);
         return mView;
     }
 
@@ -84,7 +84,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
 
     protected abstract int getLayoutView();
 
-    protected abstract void viewCreated();
+    protected abstract void viewCreated(Bundle savedInstanceState);
 
     protected abstract P  createPresenter();
 
