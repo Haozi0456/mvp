@@ -1,11 +1,11 @@
 package com.zwh.mvp.presenter;
 
 import com.lzy.okgo.model.Response;
-import com.zwh.mvp.model.bean.UserBean;
 import com.zwh.mvp.library.base.presenter.BasePresenter;
 import com.zwh.mvp.library.base.response.BaseResponse;
 import com.zwh.mvp.library.base.response.callback.JsonCallback;
 import com.zwh.mvp.model.LoginModel;
+import com.zwh.mvp.model.bean.UserBean;
 import com.zwh.mvp.view.LoginView;
 
 /**
@@ -14,17 +14,25 @@ import com.zwh.mvp.view.LoginView;
  * @Date 2018/08/20 11:37
  */
 
-public class LoginPresenter extends BasePresenter<LoginView> {
+public class LoginPresenter extends BasePresenter<LoginModel,LoginView> {
 
-    private LoginModel dataModel;
-
-    public LoginPresenter() {
-        this.dataModel = new LoginModel();
+    public LoginPresenter(LoginModel model) {
+        super(model);
     }
+
+////    private LoginModel dataModel;
+//
+//    public LoginPresenter(IBaseModel model) {
+//        super(model);
+//    }
+
+//    public LoginPresenter(new LoginModel()) {
+//        this.dataModel = new LoginModel();
+//    }
 
     public void login(String key){
         view.showLoading(false,"登录中,请稍候...");
-        dataModel.login(key,new JsonCallback<BaseResponse<UserBean>>(){
+        model.login(key,new JsonCallback<BaseResponse<UserBean>>(){
             @Override
             public void onSuccess(Response<BaseResponse<UserBean>> response) {
                 view.hideLoading();

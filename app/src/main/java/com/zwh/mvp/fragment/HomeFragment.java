@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.zwh.mvp.R;
 import com.zwh.mvp.library.base.activity.BaseTitleFragment;
+import com.zwh.mvp.model.HomeModel;
 import com.zwh.mvp.presenter.HomePresenter;
 import com.zwh.mvp.view.HomeView;
 
@@ -37,7 +38,7 @@ public class HomeFragment extends BaseTitleFragment<HomePresenter> implements Ho
 
     @Override
     protected HomePresenter createPresenter() {
-        return new HomePresenter();
+        return new HomePresenter(new HomeModel());
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.zwh.mvp.presenter;
 
 import com.zwh.mvp.library.base.presenter.BasePresenter;
+import com.zwh.mvp.model.HomeModel;
 import com.zwh.mvp.view.HomeView;
 
 /**
@@ -9,5 +10,9 @@ import com.zwh.mvp.view.HomeView;
  * @Date 2018/08/27 15:16
  */
 
-public class HomePresenter extends BasePresenter<HomeView> {
+public class HomePresenter extends BasePresenter<HomeModel,HomeView> {
+
+    public HomePresenter(HomeModel model) {
+        super(model);
+    }
 }

@@ -17,6 +17,7 @@ import com.zwh.easy.permissions.PermissionItem;
 import com.zwh.mvp.acitivity.AppActivity;
 import com.zwh.mvp.library.base.activity.BaseTitleActivity;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
+import com.zwh.mvp.model.LoginModel;
 import com.zwh.mvp.model.bean.UserBean;
 import com.zwh.mvp.presenter.LoginPresenter;
 import com.zwh.mvp.view.LoginView;
@@ -70,7 +71,7 @@ public class LoginActivity extends BaseTitleActivity<LoginPresenter> implements 
 
     @Override
     protected LoginPresenter createPresenter() {
-        return new LoginPresenter();
+        return new LoginPresenter(new LoginModel());
     }
 
     @Override

@@ -72,6 +72,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         super.onDestroy();
         if (presenter != null){
             presenter.detachView();
+            presenter = null;
         }
         unbinder.unbind();
 

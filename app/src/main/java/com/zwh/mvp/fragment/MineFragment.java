@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.zwh.mvp.R;
 import com.zwh.mvp.library.base.activity.BaseTitleFragment;
+import com.zwh.mvp.model.MineModel;
 import com.zwh.mvp.presenter.HomePresenter;
 import com.zwh.mvp.presenter.MinePresenter;
 import com.zwh.mvp.view.HomeView;
@@ -25,7 +26,7 @@ public class MineFragment extends BaseTitleFragment<MinePresenter> implements Mi
 
     @Override
     protected MinePresenter createPresenter() {
-        return new MinePresenter();
+        return new MinePresenter(new MineModel());
     }
 
 

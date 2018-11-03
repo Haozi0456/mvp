@@ -190,6 +190,7 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
         super.onDestroy();
         if (presenter != null){
             presenter.detachView();
+            presenter = null;
         }
         unbinder.unbind();
 

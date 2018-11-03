@@ -6,6 +6,13 @@ package com.zwh.mvp.library.base.model;
  * @Date 2018/08/20 12:01
  */
 
-public interface IBaseModel {
+public abstract class BaseModel {
+
+    /**
+     * 用于解除持有
+     */
+    public void onDestroy(){
+
+    }
 
 }

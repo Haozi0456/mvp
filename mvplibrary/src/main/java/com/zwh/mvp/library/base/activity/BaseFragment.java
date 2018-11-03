@@ -73,6 +73,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         super.onDestroy();
         if (presenter != null){
             presenter.detachView();
+            presenter = null;
         }
         unbinder.unbind();
 

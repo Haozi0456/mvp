@@ -176,6 +176,7 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
         super.onDestroy();
         if (presenter != null){
             presenter.detachView();
+            presenter = null;
         }
         unbinder.unbind();
 
