@@ -52,17 +52,14 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
         super.onCreate(savedInstanceState);
         mView = inflater.inflate(R.layout.fragment_base_title, container, false);
         this.context = getActivity();
-
         ViewGroup parent = (ViewGroup) mView.getParent();
         if (null != parent) {
             parent.removeView(mView);
         }
-
         addChildView(inflater);
-
         unbinder = ButterKnife.bind(this, mView);
+        viewCreated(savedInstanceState);
         presenter = createPresenter();
-
         if (presenter != null) {
             presenter.attachView(this);
         }else{
@@ -75,8 +72,6 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
                 EventBusUtils.register(this);
             }
         }
-        viewCreated(savedInstanceState);
-
         return mView;
     }
 

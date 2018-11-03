@@ -43,9 +43,9 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutView());
-
-        unbinder = ButterKnife.bind(this);
         context = this;
+        unbinder = ButterKnife.bind(this);
+        viewCreated(savedInstanceState);
         presenter = createPresenter();
 
         if (presenter != null) {
@@ -62,7 +62,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
         BaseAPP.getInstance().addActivity(this);
 
-        viewCreated(savedInstanceState);
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.zwh.mvp.app;
 
+import com.mob.MobSDK;
 import com.zwh.mvp.library.app.BaseAPP;
 
 /**
@@ -10,4 +11,10 @@ import com.zwh.mvp.library.app.BaseAPP;
 
 public class App extends BaseAPP {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        MobSDK.init(this);
+    }
 }

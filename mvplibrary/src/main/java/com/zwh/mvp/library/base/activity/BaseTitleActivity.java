@@ -52,9 +52,9 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutView());
-
         unbinder = ButterKnife.bind(this);
         context = this;
+        viewCreated(savedInstanceState);
         presenter = createPresenter();
 
         if (presenter != null) {
@@ -70,8 +70,6 @@ public abstract class BaseTitleActivity<P extends IBasePresenter> extends AppCom
         }
 
         BaseAPP.getInstance().addActivity(this);
-
-        viewCreated(savedInstanceState);
     }
 
     @SuppressLint("InflateParams")

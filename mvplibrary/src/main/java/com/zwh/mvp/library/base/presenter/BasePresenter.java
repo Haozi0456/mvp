@@ -14,12 +14,15 @@ public class BasePresenter<V extends IBaseView> implements IBasePresenter<V> {
     protected V view;
 
     public V getView() {
+        if(view == null)
+            throw new IllegalStateException("view not attached");
         return view;
     }
 
 
     @Override
     public void attachView(V view) {
+
         this.view = view;
 
     }

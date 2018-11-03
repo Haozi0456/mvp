@@ -48,8 +48,8 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         mView = inflater.inflate(getLayoutView(), container, false);
         this.context = getActivity();
         unbinder = ButterKnife.bind(this, mView);
+        viewCreated(savedInstanceState);
         presenter = createPresenter();
-
         if (presenter != null) {
             presenter.attachView(this);
         }else{
@@ -62,7 +62,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
             }
         }
 
-        viewCreated(savedInstanceState);
+
         return mView;
     }
 

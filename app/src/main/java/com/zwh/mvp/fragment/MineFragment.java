@@ -1,5 +1,7 @@
 package com.zwh.mvp.fragment;
 
+import android.os.Bundle;
+
 import com.zwh.mvp.R;
 import com.zwh.mvp.library.base.activity.BaseTitleFragment;
 import com.zwh.mvp.presenter.HomePresenter;
@@ -16,7 +18,7 @@ public class MineFragment extends BaseTitleFragment<MinePresenter> implements Mi
     }
 
     @Override
-    protected void viewCreated() {
+    protected void viewCreated(Bundle bundle) {
         setTitle("我的");
         isBackIconHidden(true);
     }
