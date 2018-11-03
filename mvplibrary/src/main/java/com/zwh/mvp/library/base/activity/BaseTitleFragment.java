@@ -58,7 +58,7 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
         }
         addChildView(inflater);
         unbinder = ButterKnife.bind(this, mView);
-        viewCreated(savedInstanceState);
+
         presenter = createPresenter();
         if (presenter != null) {
             presenter.attachView(this);
@@ -66,6 +66,7 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
             throw new IllegalStateException("Please call mPresenter in BaseMVPActivity(createPresenter) to create!");
         }
 
+        viewCreated(savedInstanceState);
 
         if (isRegisterEventBus()) {
             if(!EventBusUtils.isRegistered(this)){//加上判断

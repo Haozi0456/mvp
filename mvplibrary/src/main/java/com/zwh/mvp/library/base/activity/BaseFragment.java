@@ -48,13 +48,15 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         mView = inflater.inflate(getLayoutView(), container, false);
         this.context = getActivity();
         unbinder = ButterKnife.bind(this, mView);
-        viewCreated(savedInstanceState);
+
         presenter = createPresenter();
         if (presenter != null) {
             presenter.attachView(this);
         }else{
             throw new IllegalStateException("Please call mPresenter in BaseMVPActivity(createPresenter) to create!");
         }
+
+        viewCreated(savedInstanceState);
 
         if (isRegisterEventBus()) {
             if(!EventBusUtils.isRegistered(this)){//加上判断

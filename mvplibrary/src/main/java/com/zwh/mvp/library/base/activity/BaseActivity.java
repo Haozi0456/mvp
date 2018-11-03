@@ -45,7 +45,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         setContentView(getLayoutView());
         context = this;
         unbinder = ButterKnife.bind(this);
-        viewCreated(savedInstanceState);
+
         presenter = createPresenter();
 
         if (presenter != null) {
@@ -53,6 +53,8 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         }else{
             throw new IllegalStateException("Please call mPresenter in BaseMVPActivity(createPresenter) to create!");
         }
+
+        viewCreated(savedInstanceState);
 
         if (isRegisterEventBus()) {
             if(!EventBusUtils.isRegistered(this)){//加上判断
