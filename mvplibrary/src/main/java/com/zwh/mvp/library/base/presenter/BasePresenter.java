@@ -1,5 +1,6 @@
 package com.zwh.mvp.library.base.presenter;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.zwh.mvp.library.base.model.BaseModel;
 import com.zwh.mvp.library.base.view.IBaseView;
 
@@ -20,15 +21,15 @@ public class BasePresenter<M extends BaseModel, V extends IBaseView> implements 
     }
 
     public V getView() {
-        if (view == null) throw new IllegalStateException("view not attached,视图不附/销毁");
+        if (view == null) {
+            LogUtils.e("view not attached,视图不附/销毁");
+        }
         return view;
     }
 
 
     public void attachView(V view) {
-
         this.view = view;
-
     }
 
 
