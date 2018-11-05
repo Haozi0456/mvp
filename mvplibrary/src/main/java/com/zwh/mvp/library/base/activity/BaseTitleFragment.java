@@ -178,8 +178,10 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
             presenter.detachView();
             presenter = null;
         }
-        unbinder.unbind();
 
+        if(unbinder != null){
+            unbinder.unbind();
+        }
 
         if (isRegisterEventBus()) {
             if(EventBusUtils.isRegistered(this)){
@@ -200,7 +202,7 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
         if(progressDialog != null){
             progressDialog.dismiss();
         }
-        progressDialog = new ProgressDialog(context);
+        progressDialog = new ProgressDialog(context,R.style.progress_bar_cycle_dialog);
         View view = LayoutInflater.from(context).inflate(R.layout.progress_view,null);
         TextView tipTextView = view.findViewById(R.id.tipTV);
         if(!StringUtils.isEmpty(tip)){

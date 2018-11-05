@@ -85,8 +85,8 @@ public class LoginActivity extends BaseTitleActivity<LoginPresenter> implements 
 
     @OnClick(R.id.loginBtn)
     public void onClick() {
-//        presenter.login("ll");
-        loginReslut(null);
+        presenter.login("ll");
+//        loginReslut(null);
     }
 
 
