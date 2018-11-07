@@ -46,17 +46,8 @@ public abstract class BaseMVPFragment<P extends IBasePresenter> extends Fragment
     private TitleBar titleBar;
     private ProgressDialog progressDialog;
 
-    public BaseMVPFragment() {
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if(presenter == null){
-            presenter = createPresenter();
-            presenter.attachView(this);
-        }
-    }
+//    public BaseMVPFragment() {
+//    }
 
     @Nullable
     @Override

@@ -43,13 +43,9 @@ public abstract class BaseFragment extends Fragment {
     private ProgressDialog progressDialog;
     private TitleBar titleBar;
 
-    public BaseFragment() {
-    }
+//    public BaseFragment() {
+//    }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Nullable
     @Override

@@ -43,9 +43,11 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenter> implements Lo
 //        isTitleBarHidden(true);
         setTitleBarBackground(Color.WHITE);
         setTitle("登录测试");
+        setTitleTextColor(getResources().getColor(R.color.text_title));
 //        setLeftTitle("返回");
         isBackIconHidden(true);
         setRightTitle("编辑");
+        setRightTitleColor(getResources().getColor(R.color.text_title));
 
         setTitleBarClickListener(new onTitleBarClikListener() {
             @Override
@@ -73,6 +75,7 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenter> implements Lo
 
     @Override
     public void loginReslut(UserBean userBean) {
+        presenter.getView().hideLoading();
         Intent intent = new Intent(context, AppActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //退出防止重启
         startActivity(intent);
@@ -83,7 +86,7 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenter> implements Lo
     @OnClick(R.id.loginBtn)
     public void onClick() {
         presenter.login("ll");
-//        loginReslut(null);
+        loginReslut(null);
     }
 
 
