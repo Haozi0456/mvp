@@ -1,16 +1,17 @@
 package com.zwh.mvp.library.base.activity;
 
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.annotation.LayoutRes;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -19,12 +20,14 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
 import com.zwh.mvp.library.R;
+import com.zwh.mvp.library.app.BaseAPP;
 import com.zwh.mvp.library.base.presenter.IBasePresenter;
 import com.zwh.mvp.library.base.view.IBaseView;
 import com.zwh.mvp.library.event.Event;
 import com.zwh.mvp.library.event.EventBusUtils;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -34,32 +37,26 @@ import butterknife.Unbinder;
 /**
  *
  * @author Zhaohao
- * @Date 2018/08/27 10:39
- * @Description: BaseFragment 带标题的基类Fragment
+ * @Date 2018/08/27 10:40
+ * @Description: BaseMVPActivity 带标题栏的基类activity
  */
-public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragment implements IBaseView {
+public abstract class BaseMVPActivity<P extends IBasePresenter> extends AppCompatActivity implements IBaseView {
 
     protected P presenter;
     protected Context context;
     private Unbinder unbinder;
-    private View mView;
-    private TitleBar titleBar;
     private ProgressDialog progressDialog;
+    private TitleBar titleBar;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mView = inflater.inflate(R.layout.fragment_base_title, container, false);
-        this.context = getActivity();
-        ViewGroup parent = (ViewGroup) mView.getParent();
-        if (null != parent) {
-            parent.removeView(mView);
-        }
-        addChildView(inflater);
-        unbinder = ButterKnife.bind(this, mView);
+        setContentView(getLayoutView());
+        unbinder = ButterKnife.bind(this);
+        context = this;
 
         presenter = createPresenter();
+
         if (presenter != null) {
             presenter.attachView(this);
         }else{
@@ -73,18 +70,36 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
                 EventBusUtils.register(this);
             }
         }
-        return mView;
+
+        BaseAPP.getInstance().addActivity(this);
     }
 
+    @SuppressLint("InflateParams")
+    @Override
+    public void setContentView(@LayoutRes int layoutResID) {
+        View view = getLayoutInflater().inflate(R.layout.activity_base_title, null);
+        //设置填充activity_base布局
+        super.setContentView(view);
+
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
+            view.setFitsSystemWindows(true);
+        }
+
+        //加载子类Activity的布局
+        initDefaultView(layoutResID);
+    }
+
+
     /**
-     * 添加子Fragment的布局文件
-     * @param inflater
+     * 初始化默认布局的View
+     *
+     * @param layoutResId 子View的布局id
      */
-    private void addChildView(LayoutInflater inflater) {
-        titleBar =  mView.findViewById(R.id.titleBar);
-        FrameLayout container =  mView.findViewById(R.id.fragment_child_container);
-        View child = inflater.inflate( getLayoutView(), null);
-        container.addView(child, 0);
+    private void initDefaultView(int layoutResId) {
+        titleBar =  findViewById(R.id.titleBar);
+        FrameLayout container = findViewById(R.id.child_container);
+        View childView = LayoutInflater.from(this).inflate(layoutResId, null);
+        container.addView(childView, 0);
     }
 
     public void isTitleBarHidden(boolean isHidden) {
@@ -124,7 +139,6 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
         titleBar.setBackgroundColor(color);
     }
 
-    
     public void setTitleTextColor(int color){
         titleBar.getTitleView().setTextColor(color);
     }
@@ -172,7 +186,7 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
     }
 
     @Override
-    public void onDestroy() {
+    protected void onDestroy() {
         super.onDestroy();
         if (presenter != null){
             presenter.detachView();
@@ -188,6 +202,8 @@ public abstract class BaseTitleFragment<P extends IBasePresenter> extends Fragme
                 EventBusUtils.unregister(this);
             }
         }
+
+        BaseAPP.getInstance().removeActivity(this);
     }
 
 

@@ -3,19 +3,16 @@ package com.zwh.mvp;
 import android.Manifest;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.zwh.easy.permissions.EasyPermission;
 import com.zwh.easy.permissions.PermissionCallback;
 import com.zwh.easy.permissions.PermissionItem;
 import com.zwh.mvp.acitivity.AppActivity;
-import com.zwh.mvp.library.base.activity.BaseTitleActivity;
+import com.zwh.mvp.library.base.activity.BaseMVPActivity;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
 import com.zwh.mvp.model.LoginModel;
 import com.zwh.mvp.model.bean.UserBean;
@@ -29,7 +26,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class LoginActivity extends BaseTitleActivity<LoginPresenter> implements LoginView {
+public class LoginActivity extends BaseMVPActivity<LoginPresenter> implements LoginView {
 
 
     @BindView(R.id.loginBtn)

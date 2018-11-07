@@ -5,18 +5,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.ToastUtils;
 import com.zwh.mvp.R;
-import com.zwh.mvp.library.base.activity.BaseTitleFragment;
+import com.zwh.mvp.library.base.activity.BaseMVPFragment;
 import com.zwh.mvp.model.MineModel;
 import com.zwh.mvp.presenter.MinePresenter;
 import com.zwh.mvp.view.MineView;
@@ -25,11 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
-public class MineFragment extends BaseTitleFragment<MinePresenter> implements MineView {
+public class MineFragment extends BaseMVPFragment<MinePresenter> implements MineView {
 
 
     @BindView(R.id.tableLayout)

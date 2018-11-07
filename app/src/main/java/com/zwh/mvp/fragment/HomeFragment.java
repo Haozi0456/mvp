@@ -2,13 +2,10 @@ package com.zwh.mvp.fragment;
 
 import android.os.Bundle;
 import android.os.Environment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.zwh.mvp.R;
-import com.zwh.mvp.library.base.activity.BaseTitleFragment;
+import com.zwh.mvp.library.base.activity.BaseMVPFragment;
 import com.zwh.mvp.model.HomeModel;
 import com.zwh.mvp.presenter.HomePresenter;
 import com.zwh.mvp.view.HomeView;
@@ -17,7 +14,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
-public class HomeFragment extends BaseTitleFragment<HomePresenter> implements HomeView {
+public class HomeFragment extends BaseMVPFragment<HomePresenter> implements HomeView {
 
 
     @BindView(R.id.shareBtn)

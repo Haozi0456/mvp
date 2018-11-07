@@ -21,7 +21,7 @@ public class LoginModel extends BaseModel {
         Map<String, String> map = new HashMap<>();
         map.put("account","admin");
         map.put("password","123456");
-        OkHelper.postRequest(URLConfig.login,map,callback);
+        OkHelper.postRequest("dd",URLConfig.login,map,callback);
     }
 
 
