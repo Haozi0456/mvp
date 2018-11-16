@@ -23,7 +23,7 @@
             style="@style/progress_cycle_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminateDuration="1500"
+            android:indeterminateDuration="2000"
             android:layout_centerInParent="true"/>
 
         <TextView

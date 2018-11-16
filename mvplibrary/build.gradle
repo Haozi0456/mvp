@@ -39,7 +39,7 @@ dependencies {
 
 
     //标题栏
-    implementation 'com.hjq:titlebar:3.0'
+    implementation 'com.hjq:titlebar:3.5'
     //json解析
     compile 'com.google.code.gson:gson:2.8.2'
 

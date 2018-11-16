@@ -112,13 +112,18 @@ public class BaseAPP extends Application {
             }
 
             @Override
-            public boolean getLineVisibility() {
+            public boolean isLineVisible() {
                 return true;
             }
 
             @Override
-            public int getLineBackgroundColor() {
+            public int getLineColor() {
                 return 0xFFECECEC;
+            }
+
+            @Override
+            public int getLineSize() {
+                return 2;
             }
         });
 

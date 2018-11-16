@@ -75,10 +75,10 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenter> implements Lo
 
     @Override
     public void loginReslut(UserBean userBean) {
-        presenter.getView().hideLoading();
-        Intent intent = new Intent(context, AppActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //退出防止重启
-        startActivity(intent);
+//        presenter.getView().hideLoading();
+//        Intent intent = new Intent(context, AppActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //退出防止重启
+//        startActivity(intent);
     }
 
 
