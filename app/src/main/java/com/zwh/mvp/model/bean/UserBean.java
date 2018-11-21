@@ -28,16 +28,22 @@ public class UserBean extends BaseBean {
 
     private String account;
     private String createTime;
-    private int dataFlag;
-    private String entryTime;
+    private String email;
+    private int fromType;
     private int id;
-    private String lastVisitTime;
+    private String lastTime;
+    private int money;
     private String name;
-    private String password;
-    private String role;
-    private int roleType;
-    private double salary;
+    private String openId;
+    private int operatorId;
+    private String phone;
+    private int score;
+    private int sex;
+    private int status;
     private String token;
+    private int totalScore;
+    private int type;
+    private int valid;
 
     public String getAccount() {
         return account;
@@ -55,20 +61,20 @@ public class UserBean extends BaseBean {
         this.createTime = createTime;
     }
 
-    public int getDataFlag() {
-        return dataFlag;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDataFlag(int dataFlag) {
-        this.dataFlag = dataFlag;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getEntryTime() {
-        return entryTime;
+    public int getFromType() {
+        return fromType;
     }
 
-    public void setEntryTime(String entryTime) {
-        this.entryTime = entryTime;
+    public void setFromType(int fromType) {
+        this.fromType = fromType;
     }
 
     public int getId() {
@@ -79,12 +85,20 @@ public class UserBean extends BaseBean {
         this.id = id;
     }
 
-    public String getLastVisitTime() {
-        return lastVisitTime;
+    public String getLastTime() {
+        return lastTime;
     }
 
-    public void setLastVisitTime(String lastVisitTime) {
-        this.lastVisitTime = lastVisitTime;
+    public void setLastTime(String lastTime) {
+        this.lastTime = lastTime;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
     }
 
     public String getName() {
@@ -95,36 +109,52 @@ public class UserBean extends BaseBean {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getOpenId() {
+        return openId;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 
-    public String getRole() {
-        return role;
+    public int getOperatorId() {
+        return operatorId;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setOperatorId(int operatorId) {
+        this.operatorId = operatorId;
     }
 
-    public int getRoleType() {
-        return roleType;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setRoleType(int roleType) {
-        this.roleType = roleType;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public double getSalary() {
-        return salary;
+    public int getScore() {
+        return score;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getToken() {
@@ -133,5 +163,29 @@ public class UserBean extends BaseBean {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public int getTotalScore() {
+        return totalScore;
+    }
+
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getValid() {
+        return valid;
+    }
+
+    public void setValid(int valid) {
+        this.valid = valid;
     }
 }

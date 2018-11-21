@@ -1,12 +1,15 @@
 package com.zwh.mvp.presenter;
 
 import com.lzy.okgo.model.Response;
+import com.zwh.mvp.api.BackPageResponse;
 import com.zwh.mvp.library.base.presenter.BasePresenter;
 import com.zwh.mvp.library.base.response.BaseResponse;
 import com.zwh.mvp.library.base.response.callback.JsonCallback;
 import com.zwh.mvp.model.LoginModel;
 import com.zwh.mvp.model.bean.UserBean;
 import com.zwh.mvp.view.LoginView;
+
+import java.util.Map;
 
 /**
  * @author Zhaohao
@@ -43,6 +46,28 @@ public class LoginPresenter extends BasePresenter<LoginModel,LoginView> {
                 }
 
             }
+        });
+    }
+
+    public void getMemberList(Map<String,String> params){
+        model.getMemberList(params,new  JsonCallback<BackPageResponse<UserBean>>(){
+            @Override
+            public void onSuccess(Response<BackPageResponse<UserBean>> response) {
+                if(100 == response.body().getCode()){
+                    if(getView() != null){
+
+                    }
+
+                }else{
+                    if(getView() != null){
+                        getView().showToast(response.body().getMsg());
+
+                    }
+
+                }
+            }
+
+
         });
     }
 

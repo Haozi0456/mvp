@@ -2,6 +2,7 @@ package com.zwh.mvp.app;
 
 import com.mob.MobSDK;
 import com.zwh.mvp.library.app.BaseAPP;
+import com.zwh.mvp.model.bean.UserBean;
 
 /**
  * @author Zhaohao
@@ -10,6 +11,8 @@ import com.zwh.mvp.library.app.BaseAPP;
  */
 
 public class App extends BaseAPP {
+
+    public static UserBean userBean = null;
 
     @Override
     public void onCreate() {

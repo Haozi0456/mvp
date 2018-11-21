@@ -8,7 +8,11 @@ package com.zwh.mvp.api;
 
 public class URLConfig {
 
-    public static String host = "http://114.116.53.54:8080/ManagerServer/system/";
+    public final static String host = "http://192.168.2.205:8080/shop";
 
-    public static String login = host + "manager/login";
+    public static String login = host + "/user/login";
+
+
+    //会员列表
+    public static String member_list = host +"/member/getMemberList";
 }
