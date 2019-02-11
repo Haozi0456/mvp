@@ -145,6 +145,28 @@ public abstract class BaseFragment extends Fragment {
         titleBar.getRightView().setTextColor(color);
     }
 
+    /**
+     * 设置左标题的文本大小
+     */
+    public void setLeftSize(int unit, float size) {
+        titleBar.setLeftSize(unit,size);
+    }
+
+    /**
+     * 设置标题的文本大小
+     */
+    public void setTitleSize(int unit, float size) {
+        titleBar.setTitleSize(unit, size);
+    }
+
+    /**
+     * 设置右标题的文本大小
+     */
+    public void setRightSize(int unit, float size) {
+        titleBar.setRightSize(unit, size);
+    }
+
+
     public void setTitleBarClickListener(final onTitleBarClikListener listener){
         if(listener != null){
             titleBar.setOnTitleBarListener(new OnTitleBarListener() {
