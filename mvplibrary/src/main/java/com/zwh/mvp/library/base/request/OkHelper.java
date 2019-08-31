@@ -142,6 +142,72 @@ public class OkHelper {
         request.execute(callback);
     }
 
+
+    /**
+     * @param tag 请求的tag，用于标识当前的请求，方便后续取消对应的请求，如果你不需要取消请求，也可以不用设置
+     * @param url 请求地址
+     * @param params 参数键值对
+     * @param filesParamsKey 文件上传参数名称
+     * @param files 文件列表
+     * @param callback 返回
+     */
+    public static <T> void upFilesRequest(Object tag,String url, @Nullable HttpHeaders headers, Map<String, String> params,String filesParamsKey, List<File> files, JsonCallback<T> callback){
+        PostRequest<T> request = OkGo.<T>post(url)
+                .tag(tag)
+                .cacheMode(CacheMode.NO_CACHE)
+                .headers(headers)
+                .isMultipart(true)
+                .params(params);
+        for (File file : files) {
+            request.params(filesParamsKey, file);
+        }
+        request.execute(callback);
+    }
+
+    /**
+     * @param tag 请求的tag，用于标识当前的请求，方便后续取消对应的请求，如果你不需要取消请求，也可以不用设置
+     * @param url 请求地址
+     * @param params 参数键值对
+     * @param filesMap 文件上传参数名称及参数集合
+     * @param callback 返回
+     */
+    public static void upFilesRequest(Object tag,String url, @Nullable HttpHeaders headers, Map<String, String> params, Map<String,File> filesMap, StringCallback callback){
+        PostRequest<String> request = OkGo.<String>post(url)
+                .tag(tag)
+                .cacheMode(CacheMode.NO_CACHE)
+                .headers(headers)
+                .isMultipart(true)
+                .params(params);
+        for (Map.Entry<String, File> entry : filesMap.entrySet()) {
+            String mapKey = entry.getKey();
+            File mapValue = entry.getValue();
+            request.params(mapKey, mapValue);
+        }
+        request.execute(callback);
+    }
+
+    /**
+     * @param tag 请求的tag，用于标识当前的请求，方便后续取消对应的请求，如果你不需要取消请求，也可以不用设置
+     * @param url 请求地址
+     * @param params 参数键值对
+     * @param filesMap 文件上传参数名称及参数集合
+     * @param callback 返回
+     */
+    public static <T> void upFilesRequest(Object tag,String url, @Nullable HttpHeaders headers, Map<String, String> params, Map<String,File> filesMap, JsonCallback<T> callback){
+        PostRequest<T> request = OkGo.<T>post(url)
+                .tag(tag)
+                .cacheMode(CacheMode.NO_CACHE)
+                .headers(headers)
+                .isMultipart(true)
+                .params(params);
+        for (Map.Entry<String, File> entry : filesMap.entrySet()) {
+            String mapKey = entry.getKey();
+            File mapValue = entry.getValue();
+            request.params(mapKey, mapValue);
+        }
+        request.execute(callback);
+    }
+
     /**
      * @param tag 请求的tag，用于标识当前的请求，方便后续取消对应的请求，如果你不需要取消请求，也可以不用设置
      * @param url 请求地址
