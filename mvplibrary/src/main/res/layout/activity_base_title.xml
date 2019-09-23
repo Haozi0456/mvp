@@ -8,7 +8,6 @@
         android:id="@+id/titleBar"
         android:layout_marginBottom="0dp"
         android:layout_width="match_parent"
-        android:background="@color/main_colorPrimary"
         android:layout_height="@dimen/Size_48">
 
     </com.hjq.bar.TitleBar>
