@@ -2,11 +2,14 @@ package com.zwh.mvp.library.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.hjq.bar.ITitleBarStyle;
 import com.hjq.bar.TitleBar;
+import com.hjq.bar.style.TitleBarLightStyle;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -55,77 +58,7 @@ public class BaseAPP extends Application {
     }
 
     private void initTitleBar() {
-        TitleBar.initStyle(new ITitleBarStyle() {
-            @Override
-            public int getTitleBarHeight() {
-                return 0;
-            }
-
-            @Override
-            public int getBackgroundColor() {
-                return 0;
-            }
-
-            @Override
-            public int getBackIconResource() {
-                return R.mipmap.bar_icon_back_white;
-            }
-
-            @Override
-            public int getLeftViewColor() {
-                return 0xFFFFFFFF;
-            }
-
-            @Override
-            public int getTitleViewColor() {
-                return 0xFFFFFFFF;
-            }
-
-            @Override
-            public int getRightViewColor() {
-                return 0xFFFFFFFF;
-            }
-
-            @Override
-            public float getLeftViewSize() {
-                return 16;
-            }
-
-            @Override
-            public float getTitleViewSize() {
-                return 18;
-            }
-
-            @Override
-            public float getRightViewSize() {
-                return 16;
-            }
-
-            @Override
-            public int getLeftViewBackground() {
-                return 0;
-            }
-
-            @Override
-            public int getRightViewBackground() {
-                return 0;
-            }
-
-            @Override
-            public boolean isLineVisible() {
-                return true;
-            }
-
-            @Override
-            public int getLineColor() {
-                return 0xFFECECEC;
-            }
-
-            @Override
-            public int getLineSize() {
-                return 2;
-            }
-        });
+        TitleBar.initStyle(new TitleBarLightStyle(getApplicationContext()));
 
     }
 

@@ -41,7 +41,7 @@ dependencies {
 
 
     //标题栏
-    implementation 'com.hjq:titlebar:3.5'
+    implementation 'com.hjq:titlebar:6.0'
     //json解析
     compile 'com.google.code.gson:gson:2.8.2'
 
@@ -52,7 +52,7 @@ dependencies {
     compile "com.github.bumptech.glide:okhttp3-integration:4.8.0"
 
     //帮助工具类
-    compile 'com.blankj:utilcode:1.20.2'
+    compile 'com.blankj:utilcode:1.25.9'
 
     //EventBus
     implementation 'org.greenrobot:eventbus:3.1.1'
