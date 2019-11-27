@@ -2,7 +2,6 @@ package com.zwh.mvp.library.base.activity;
 
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
@@ -35,10 +34,10 @@ import butterknife.Unbinder;
 /**
  *
  * @author Zhaohao
- * @Date 2019-11-27 13:58:18
- * @Description: BaseActivity 基类Activity
+ * @Date 2018/08/27 10:39
+ * @Description: BaseAppActivity 基类AppCompatActivity
  */
-public abstract class BaseActivity extends Activity {
+public abstract class BaseAppActivity extends AppCompatActivity {
 
     protected Context context;
     private Unbinder unbinder;
