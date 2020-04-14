@@ -1,11 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 27
+        minSdkVersion 26
+        targetSdkVersion 29
         versionCode 8
         versionName "0.8"
 
@@ -20,40 +21,51 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation "com.android.support:recyclerview-v7:27.1.1"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api 'androidx.annotation:annotation:1.1.0'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+    api "com.google.android.material:material:1.1.0"
+
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //绑定注解，专业解决各种findViewById 此库必须写到app的bulider.gradle里,不然无效
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    api 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
     //网络请求
-    compile 'com.lzy.net:okgo:3.0.4'
+    api 'com.lzy.net:okgo:3.0.4'
 
 
     //标题栏
-    compile 'com.hjq:titlebar:6.0'
+    api 'com.hjq:titlebar:6.0'
+
     //json解析
-    compile 'com.google.code.gson:gson:2.8.2'
+    api 'com.google.code.gson:gson:2.8.6'
 
     // glide图片加载库
-    compile 'com.github.bumptech.glide:glide:4.8.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    api 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
     //glide的网路请求插件
-    compile "com.github.bumptech.glide:okhttp3-integration:4.8.0"
+    api "com.github.bumptech.glide:okhttp3-integration:4.11.0"
 
     //帮助工具类
-    compile 'com.blankj:utilcode:1.25.9'
+    api 'com.blankj:utilcodex:1.28.0'
 
     //EventBus
-    implementation 'org.greenrobot:eventbus:3.1.1'
+    api 'org.greenrobot:eventbus:3.2.0'
 }

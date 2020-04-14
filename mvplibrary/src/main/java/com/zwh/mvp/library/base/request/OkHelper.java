@@ -1,6 +1,5 @@
 package com.zwh.mvp.library.base.request;
 
-import android.support.annotation.Nullable;
 
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
@@ -13,6 +12,8 @@ import com.zwh.mvp.library.base.response.callback.JsonCallback;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
+
+import androidx.annotation.Nullable;
 
 
 /**

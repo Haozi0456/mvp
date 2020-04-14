@@ -4,23 +4,20 @@ import android.Manifest;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
-import com.blankj.utilcode.util.ToastUtils;
-import com.lzy.okgo.model.Response;
 import com.zwh.easy.permissions.EasyPermission;
 import com.zwh.easy.permissions.PermissionCallback;
 import com.zwh.easy.permissions.PermissionItem;
 import com.zwh.mvp.acitivity.AppActivity;
-import com.zwh.mvp.api.BackResponse;
-import com.zwh.mvp.api.URLConfig;
 import com.zwh.mvp.app.App;
 import com.zwh.mvp.library.base.activity.BaseMVPActivity;
-import com.zwh.mvp.library.base.request.OkHelper;
-import com.zwh.mvp.library.base.response.callback.JsonCallback;
 import com.zwh.mvp.library.tools.listener.onTitleBarClikListener;
+import com.zwh.mvp.library.widget.ClearnEditText;
+import com.zwh.mvp.library.widget.PasswordEditText;
 import com.zwh.mvp.model.LoginModel;
 import com.zwh.mvp.model.bean.UserBean;
 import com.zwh.mvp.presenter.LoginPresenter;
@@ -31,7 +28,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import androidx.core.content.res.ResourcesCompat;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -40,6 +39,14 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenter> implements Lo
 
     @BindView(R.id.loginBtn)
     Button loginBtn;
+    @BindView(R.id.logoIV)
+    ImageView logoIV;
+    @BindView(R.id.accountET)
+    ClearnEditText accountET;
+    @BindView(R.id.pwdET)
+    PasswordEditText pwdET;
+    @BindView(R.id.inputLayout)
+    LinearLayout inputLayout;
     private String Tag = "loginTag";
 
     @Override
@@ -91,45 +98,53 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenter> implements Lo
 //        startActivity(intent);
     }
 
-
-
     @OnClick(R.id.loginBtn)
-    public void onClick() {
-        Map<String,String> params = new HashMap<>();
-        params.put("account","13419519796");
-        params.put("password","123456");
-        params.put("type","1");
-
-        OkHelper.postRequest(Tag, URLConfig.login,params, new JsonCallback<BackResponse<UserBean>>() {
-            @Override
-            public void onSuccess(Response<BackResponse<UserBean>> response) {
-                hideLoading();
-                if(response.body().getCode() == 100){
-                    UserBean userBean = response.body().getData();
-                    App.userBean = userBean;
-//                    Intent intent = new Intent(context, MainActivity.class);
-//                    startActivity(intent);
-//                    finish();
-                    getMemberList();
-                }else{
-                    ToastUtils.showShort(response.body().getMsg());
-                }
-            }
-
-            @Override
-            public void onError(Response<BackResponse<UserBean>> response) {
-                super.onError(response);
-                hideLoading();
-            }
-        });
+    public void onViewClicked() {
+        Intent intent = new Intent(context, AppActivity.class);
+        startActivity(intent);
+        finish();
     }
 
+//    @OnClick(R.id.loginBtn)
+//    public void onClick() {
+//        Map<String, String> params = new HashMap<>();
+//        params.put("account", "13419519796");
+//        params.put("password", "123456");
+//        params.put("type", "1");
+//
+//        OkHelper.postRequest(Tag, URLConfig.login,params, new JsonCallback<BackResponse<UserBean>>() {
+//            @Override
+//            public void onSuccess(Response<BackResponse<UserBean>> response) {
+//                hideLoading();
+//                if(response.body().getCode() == 100){
+//                    UserBean userBean = response.body().getData();
+//                    App.userBean = userBean;
+//                    Intent intent = new Intent(context, AppActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                    getMemberList();
+//                }else{
+//                    ToastUtils.showShort(response.body().getMsg());
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Response<BackResponse<UserBean>> response) {
+//                super.onError(response);
+//                hideLoading();
+//            }
+//        });
+//        Intent intent = new Intent(context, AppActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
+
     private void getMemberList() {
-        UserBean user= App.userBean;
-        Map<String,String> params = new HashMap<>();
-        params.put("shopId","1");
-        params.put("size",10+"");
-        params.put("current",1+"");
+        UserBean user = App.userBean;
+        Map<String, String> params = new HashMap<>();
+        params.put("shopId", "1");
+        params.put("size", 10 + "");
+        params.put("current", 1 + "");
         presenter.getMemberList(params);
     }
 
@@ -148,29 +163,30 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenter> implements Lo
 //        permissionItems.add(new PermissionItem(Manifest.permission.ACCESS_COARSE_LOCATION, "位置", R.drawable.permission_ic_location));
         EasyPermission.create(context)
 //                .title("Dear God")
-                .permissions(permissionItems)
-                .filterColor(ResourcesCompat.getColor(getResources(), R.color.colorPrimary, getTheme()))//permission icon color
+                .permissions(permissionItems).filterColor(ResourcesCompat.getColor(getResources(), R.color.colorPrimary, getTheme()))//permission icon color
 //                .msg("To protect the peace of the world, open these permissions! You and I together save the world!")
-                .style(R.style.PermissionBlueStyle)
-                .checkMutiPermission(new PermissionCallback() {
-                    @Override
-                    public void onClose() {
+                .style(R.style.PermissionBlueStyle).checkMutiPermission(new PermissionCallback() {
+            @Override
+            public void onClose() {
 
-                    }
+            }
 
-                    @Override
-                    public void onFinish() {
-                        // showToast("所有权限申请完成");
+            @Override
+            public void onFinish() {
+                // showToast("所有权限申请完成");
 
-                    }
+            }
 
-                    @Override
-                    public void onDeny(String permission, int position) {
-                    }
+            @Override
+            public void onDeny(String permission, int position) {
+            }
 
-                    @Override
-                    public void onGuarantee(String permission, int position) {
-                    }
-                });
+            @Override
+            public void onGuarantee(String permission, int position) {
+            }
+        });
     }
+
+
+
 }

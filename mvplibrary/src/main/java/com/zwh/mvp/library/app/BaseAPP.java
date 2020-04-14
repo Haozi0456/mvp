@@ -2,12 +2,9 @@ package com.zwh.mvp.library.app;
 
 import android.app.Activity;
 import android.app.Application;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
-import com.hjq.bar.ITitleBarStyle;
 import com.hjq.bar.TitleBar;
 import com.hjq.bar.style.TitleBarLightStyle;
 import com.lzy.okgo.OkGo;

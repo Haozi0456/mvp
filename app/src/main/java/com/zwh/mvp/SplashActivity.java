@@ -3,11 +3,9 @@ package com.zwh.mvp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.zwh.mvp.acitivity.AppActivity;
 import com.zwh.mvp.library.base.activity.BaseActivity;
 
 public class SplashActivity extends BaseActivity {
