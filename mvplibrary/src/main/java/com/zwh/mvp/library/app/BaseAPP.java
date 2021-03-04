@@ -50,7 +50,7 @@ public class BaseAPP extends Application {
         //初始化工具类
         Utils.init(this);
         //设置toast背景颜色
-        ToastUtils.setBgColor(getResources().getColor(R.color.toast_stroke_gray));
+//        ToastUtils.(getResources().getColor(R.color.toast_stroke_gray));
 
         initTitleBar();
 

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Mvp.iml" filepath="$PROJECT_DIR$/Mvp.iml" group="Mvp" />
+      <module fileurl="file://$PROJECT_DIR$/app/Mvp-app.iml" filepath="$PROJECT_DIR$/app/Mvp-app.iml" group="Mvp/app" />
+      <module fileurl="file://$PROJECT_DIR$/mvplibrary/Mvp-mvplibrary.iml" filepath="$PROJECT_DIR$/mvplibrary/Mvp-mvplibrary.iml" group="Mvp/mvplibrary" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mvp.iml" filepath="$PROJECT_DIR$/mvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvplibrary/mvplibrary.iml" filepath="$PROJECT_DIR$/mvplibrary/mvplibrary.iml" />
     </modules>
   </component>

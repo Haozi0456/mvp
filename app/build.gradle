@@ -4,9 +4,9 @@ apply plugin: 'com.mob.sdk'
 android {
     signingConfigs {
         config {
-            keyAlias 'zwh'
+            keyAlias 'zwh2019'
             keyPassword '123456'
-            storeFile file('/Users/zhaohao/WorkSpace/Android/key/zwh')
+            storeFile file('F:\\Development\\WorkSpaces\\AndroidProjects\\Projects_2020\\key\\zwh2019.keystore')
             storePassword '123456'
         }
     }
