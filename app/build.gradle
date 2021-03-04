@@ -2,14 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.mob.sdk'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'zwh2019'
-            keyPassword '123456'
-            storeFile file('F:\\Development\\WorkSpaces\\AndroidProjects\\Projects_2020\\key\\zwh2019.keystore')
-            storePassword '123456'
-        }
-    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.zwh.mvp"
@@ -24,9 +16,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {
-            signingConfig signingConfigs.config
-        }
+        
     }
     configurations.all {
         resolutionStrategy.force 'com.android.support:support-annotations:27.1.1'
