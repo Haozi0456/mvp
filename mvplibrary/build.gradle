@@ -52,7 +52,7 @@ dependencies {
     compile "com.github.bumptech.glide:okhttp3-integration:4.8.0"
 
     //帮助工具类
-    compile 'com.blankj:utilcode:1.25.9'
+    compile 'com.blankj:utilcode:1.30.6'
 
     //EventBus
     implementation 'org.greenrobot:eventbus:3.1.1'
